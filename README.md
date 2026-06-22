@@ -75,8 +75,8 @@ The following classification models were developed and evaluated:
 
 | Model | Accuracy | Precision | Recall | F1-Score |
 |--------|----------|----------|----------|----------|
-| Balanced Logistic Regression | 0.73 | 0.50 | **0.79** | **0.61** |
-| Random Forest | **0.79** | **0.63** | 0.48 | 0.54 |
+| Balanced Logistic Regression | 0.73 | 0.50 | 0.79 | 0.61 |
+| Random Forest | 0.79 | 0.63 | 0.48 | 0.54 |
 | Decision Tree | 0.72 | 0.48 | 0.52 | 0.50 |
 
 ---
@@ -85,7 +85,7 @@ The following classification models were developed and evaluated:
 
 Customer churn prediction focuses on identifying customers at risk of leaving the company. Therefore, Recall was considered the most important evaluation metric.
 
-Although Logistic Regression and Random Forest achieved higher accuracy scores, Balanced Logistic Regression produced the highest Recall (0.79) and F1-Score (0.61).
+Although Random Forest achieved higher accuracy scores, Balanced Logistic Regression produced the highest Recall (0.79) and F1-Score (0.61).
 
 As a result, Balanced Logistic Regression was selected as the final model.
 
