@@ -75,7 +75,6 @@ The following classification models were developed and evaluated:
 
 | Model | Accuracy | Precision | Recall | F1-Score |
 |---------|---------|---------|---------|---------|
-| Logistic Regression | 0.79 | 0.62 | 0.52 | 0.56 |
 | Balanced Logistic Regression | 0.73 | 0.50 | 0.79 | 0.61 |
 | Random Forest | 0.79 | 0.63 | 0.48 | 0.54 |
 | Decision Tree | 0.72 | 0.48 | 0.52 | 0.50 |
