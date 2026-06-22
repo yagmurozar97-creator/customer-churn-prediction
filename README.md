@@ -1,173 +1,14 @@
 # Customer Churn Prediction Using Machine Learning
 
+![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)
+![Scikit-Learn](https://img.shields.io/badge/scikit--learn-latest-orange.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
 ## Project Overview
 
-Customer churn is one of the most critical challenges for subscription-based businesses. Retaining existing customers is often more cost-effective than acquiring new ones. Therefore, identifying customers who are likely to leave the company is essential for improving customer retention strategies.
+Customer churn is one of the most critical challenges for subscription-based businesses, as retaining existing customers is often more cost-effective than acquiring new ones.
 
-The objective of this project is to analyze customer behavior, identify the key factors associated with churn, and develop machine learning models capable of predicting customer attrition.
-
----
-
-## Dataset
-
-The dataset contains customer demographic information, service subscriptions, account details, and churn status.
-
-### Target Variable
-
-**Churn**
-
-- Yes = Customer left the company
-- No = Customer remained with the company
-
-### Main Features
-
-- Gender
-- SeniorCitizen
-- Partner
-- Dependents
-- Tenure
-- PhoneService
-- InternetService
-- OnlineSecurity
-- TechSupport
-- Contract
-- PaperlessBilling
-- PaymentMethod
-- MonthlyCharges
-- TotalCharges
-
----
-
-## Project Workflow
-
-### 1. Exploratory Data Analysis (EDA)
-
-The dataset was explored to identify customer characteristics and factors associated with churn.
-
-Key analyses included:
-
-- Contract Type Analysis
-- Payment Method Analysis
-- Internet Service Analysis
-- Technical Support Analysis
-- Online Security Analysis
-- Paperless Billing Analysis
-- Monthly Charges Analysis
-- Correlation Analysis
-
----
-
-### 2. Data Preprocessing
-
-The following preprocessing steps were applied:
-
-- Removed CustomerID variable
-- One-Hot Encoding for categorical features
-- Train-Test Split (80%-20%)
-- Feature Scaling using StandardScaler
-- Class imbalance handling using Balanced Logistic Regression
-
----
-
-### 3. Machine Learning Models
-
-The following classification models were developed and evaluated:
-
-| Model | Accuracy | Precision | Recall | F1-Score |
-|--------|----------|----------|----------|----------|
-| Balanced Logistic Regression | 0.73 | 0.50 | 0.79 | 0.61 |
-| Random Forest | 0.79 | 0.63 | 0.48 | 0.54 |
-| Decision Tree | 0.72 | 0.48 | 0.52 | 0.50 |
-
----
-
-## Model Selection
-
-Customer churn prediction focuses on identifying customers at risk of leaving the company. Therefore, Recall was considered the most important evaluation metric.
-
-Although Random Forest achieved higher accuracy scores, Balanced Logistic Regression produced the highest Recall (0.79) and F1-Score (0.61).
-
-As a result, Balanced Logistic Regression was selected as the final model.
-
----
-
-## ROC-AUC Analysis
-
-The final model achieved:
-
-### ROC-AUC Score = 0.83
-
-This result indicates a strong ability to distinguish between customers who churn and those who remain with the company.
-
-### ROC Curve
-
-![ROC Curve](roc_curve.png)
-
----
-
-## Feature Importance Analysis
-
-Feature importance analysis revealed that customer churn was primarily influenced by:
-
-1. Tenure
-2. Monthly Charges
-3. Internet Service (Fiber Optic)
-4. Total Charges
-5. Contract Type
-6. Streaming Movies
-7. Streaming TV
-8. Multiple Lines
-9. Payment Method (Electronic Check)
-
-### Feature Importance Visualization
-
-![Feature Importance](feature_importance.png)
-
-### Key Findings
-
-- Customers with shorter tenure were more likely to churn.
-- Higher monthly charges increased churn risk.
-- Fiber optic internet users exhibited higher churn rates.
-- Month-to-month contracts showed significantly higher churn rates than long-term contracts.
-- Technical Support and Online Security services were associated with lower churn rates.
-- Electronic Check users demonstrated the highest churn rate among payment methods.
-
----
-
-## Business Recommendations
-
-Based on the analysis results, the following actions are recommended:
-
-- Encourage customers to switch from month-to-month contracts to longer-term contracts through loyalty programs and promotional campaigns.
-- Investigate the causes of high churn among fiber optic internet customers and improve service quality where necessary.
-- Promote value-added services such as Technical Support and Online Security packages.
-- Monitor customers with high monthly charges and implement personalized retention strategies.
-- Use the Balanced Logistic Regression model as an early warning system to identify customers at risk of churn.
-
----
-
-## Technologies Used
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-Learn
-
----
-
-## Results
-
-The project successfully identified key drivers of customer churn and developed a predictive model capable of detecting customers at risk of leaving.
-
-### Final Model Performance
-
-- Recall: 0.79
-- F1-Score: 0.61
-- ROC-AUC: 0.83
-
-These results demonstrate that the model can effectively support customer retention strategies and proactive churn management.
+This project aims to analyze customer behavior, identify the key factors associated with churn, and develop machine learning models capable of predicting customer attrition to support proactive customer retention strategies.
 
 ---
 
@@ -181,13 +22,134 @@ customer-churn-prediction/
 │
 ├── images/
 │   ├── roc_curve.png
-│   └── feature_importance.png
+│   ├── feature_importance.png
 │
 ├── Customer_Churn_Analysis.ipynb
 ├── README.md
-├── requirements.txt
 └── LICENSE
 ```
+
+---
+
+## Dataset
+
+The dataset contains customer demographic information, service subscriptions, account details, and churn status.
+
+### Target Variable
+
+**Churn**
+
+* Yes → Customer left the company
+* No → Customer remained with the company
+
+---
+
+## Tech Stack
+
+### Data Analysis & Visualization
+
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+
+### Machine Learning
+
+* Scikit-Learn
+
+---
+
+## Data Preprocessing
+
+* Removed CustomerID variable
+* Applied One-Hot Encoding for categorical variables
+* Train-Test Split (80%-20%)
+* Feature Scaling using StandardScaler
+* Class imbalance handling using Balanced Logistic Regression
+
+---
+
+## Key Findings & EDA Insights
+
+*  Customers with shorter tenure were significantly more likely to churn.
+*  Higher monthly charges were associated with increased churn risk.
+*  Fiber optic internet users exhibited higher churn rates.
+*  Month-to-month contracts showed substantially higher churn rates than long-term contracts.
+*  Technical Support and Online Security services were associated with lower churn rates.
+*  Electronic Check users demonstrated the highest churn rate among all payment methods.
+
+---
+
+## Model Performance & Evaluation
+
+Customer churn prediction focuses on identifying customers at risk of leaving. Therefore, **Recall** was prioritized as the primary evaluation metric to minimize False Negatives (missing potential churn customers).
+
+| Model                        | Accuracy | Precision | Recall | F1-Score |
+| ---------------------------- | -------- | --------- | ------ | -------- |
+| Balanced Logistic Regression | 0.73     | 0.50      | 0.79   | 0.61     |
+| Random Forest                | 0.79     | 0.63      | 0.48   | 0.54     |
+| Decision Tree                | 0.72     | 0.48      | 0.52   | 0.50     |
+
+### Final Model Selection
+
+Although Random Forest achieved higher accuracy, Balanced Logistic Regression was selected as the final model due to its superior Recall (0.79) and F1-Score (0.61).
+
+This trade-off was preferred because failing to identify a potential churn customer is generally more costly than incorrectly flagging a loyal customer.
+
+---
+
+## ROC-AUC Analysis
+
+**ROC-AUC Score: 0.83**
+
+This result indicates a strong ability to distinguish between customers who churn and those who remain with the company.
+
+### ROC Curve
+
+![ROC Curve](roc_curve.png)
+
+---
+
+## Most Influential Features
+
+The analysis revealed that customer churn was primarily influenced by:
+
+![Feature Importance](feature_importance.png)
+
+---
+
+## Business Recommendations
+
+### Contract Optimization
+
+Encourage customers to switch from month-to-month contracts to longer-term contracts through loyalty programs and targeted promotional campaigns.
+
+### Infrastructure & Service Quality
+
+Investigate the underlying causes of high churn among fiber optic internet customers and improve service quality where necessary.
+
+### Cross-Selling Opportunities
+
+Promote value-added services such as Technical Support and Online Security packages during onboarding and engagement campaigns.
+
+### Proactive Retention Strategy
+
+Monitor customers with high monthly charges and implement personalized retention campaigns using the Balanced Logistic Regression model as an early warning system.
+
+---
+
+## Results
+
+The project successfully identified key drivers of customer churn and developed a predictive model capable of detecting customers at risk of leaving.
+
+### Final Model Performance
+
+* Recall: 0.79
+* F1-Score: 0.61
+* ROC-AUC: 0.83
+
+These results demonstrate that the model can effectively support customer retention initiatives and proactive churn management.
 
 ---
 
@@ -195,7 +157,4 @@ customer-churn-prediction/
 
 **Yağmur Ozar**
 
-Statistics Graduate | Data Analytics & Machine Learning 
-
-GitHub: https://github.com/yagmurozar97-creator
-
+Statistics Graduate | Data Analytics & Machine Learning
