@@ -74,9 +74,9 @@ The following preprocessing steps were applied:
 The following classification models were developed and evaluated:
 
 | Model | Accuracy | Precision | Recall | F1-Score |
-|---------|---------|---------|---------|---------|
-| Balanced Logistic Regression | 0.73 | 0.50 | 0.79 | 0.61 |
-| Random Forest | 0.79 | 0.63 | 0.48 | 0.54 |
+|--------|----------|----------|----------|----------|
+| Balanced Logistic Regression | 0.73 | 0.50 | **0.79** | **0.61** |
+| Random Forest | **0.79** | **0.63** | 0.48 | 0.54 |
 | Decision Tree | 0.72 | 0.48 | 0.52 | 0.50 |
 
 ---
